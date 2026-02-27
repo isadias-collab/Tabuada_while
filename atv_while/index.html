@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Tabuada com While</title>
+</head>
+<body>
+
+    <h2>Gerador de Tabuada (Método While)</h2>
+
+    <input type="number" id="numTabuada" placeholder="Digite um número">
+    <button onclick="gerarTabuada()">Gerar com While</button>
+
+    <div id="resultado"></div>
+
+    <script>
+        function gerarTabuada() {
+            let n = Number(document.getElementById("numTabuada").value);
+            let display = document.getElementById("resultado");
+            let conteudo = "<h3>Tabuada do " + n + "</h3>";
+
+            // 1. Início da contagem
+            let i = 1;
+
+            // 2. Condição: Enquanto i for menor ou igual a 10
+            while (i <= 10) {
+                let resultado = n * i;
+                conteudo += n + " x " + i + " = " + resultado + "<br>";
+
+                // 3. Incremento (Fundamental para não travar o navegador!)
+                i++;
+            }
+
+            display.innerHTML = conteudo;
+        }
+    </script>
+
+</body>
+</html>
